@@ -1,0 +1,9 @@
+{
+  "triggers": [
+    {
+      "name": "nightly-check",
+      "type": "timer",
+      "config": "0 30 20 * * * *"
+    }
+  ]
+}

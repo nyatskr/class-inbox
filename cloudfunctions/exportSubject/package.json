@@ -1,0 +1,10 @@
+{
+  "name": "exportSubject",
+  "version": "1.0.0",
+  "description": "按学科打包导出 ZIP（课堂记录 + 课程资料 + 资料目录）",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3",
+    "adm-zip": "^0.5.16"
+  }
+}

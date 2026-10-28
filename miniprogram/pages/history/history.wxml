@@ -1,0 +1,29 @@
+<view class="wrap">
+  <scroll-view class="kinds" scroll-x>
+    <view class="k {{filter === item.key ? 'on' : ''}}" wx:for="{{statusChips}}" wx:key="key"
+          bindtap="setFilter" data-k="{{item.key}}">{{item.label}}</view>
+  </scroll-view>
+
+  <view class="undo" wx:if="{{filter === 'exempt' && total > 0}}">
+    <text>这 {{total}} 节都不再提醒了。</text>
+    <button class="btn sm" bindtap="unexemptAll">恢复成待处理</button>
+  </view>
+
+  <block wx:if="{{groups.length}}">
+    <view class="group" wx:for="{{groups}}" wx:key="name" wx:for-item="g">
+      <view class="g-head"><text>{{g.name}}</text><text class="cnt">{{g.items.length}}</text></view>
+      <view class="row" wx:for="{{g.items}}" wx:key="id">
+        <view class="r-main">
+          <text class="r-date">{{item.dateText}}</text>
+          <text class="r-meta">{{item.time}}{{item.place ? ' · ' + item.place : ''}}{{item.textLen ? ' · ' + item.textLen + ' 字' : ''}}</text>
+        </view>
+        <text class="chip {{item.chipCls}}">{{item.chipLabel}}</text>
+      </view>
+    </view>
+  </block>
+
+  <view class="empty" wx:elif="{{!loading}}">
+    <view class="big">▣</view>
+    <p>没有符合筛选条件的记录。</p>
+  </view>
+</view>

@@ -1,0 +1,31 @@
+<view class="wrap">
+  <view class="bar">
+    <text class="total">{{totalText}}</text>
+    <button class="btn sm primary" bindtap="upload">＋ 上传</button>
+  </view>
+
+  <scroll-view class="kinds" scroll-x>
+    <view class="k {{filter === 'all' ? 'on' : ''}}" bindtap="setFilter" data-k="all">全部</view>
+    <view class="k {{filter === item.key ? 'on' : ''}}" wx:for="{{kinds}}" wx:key="key"
+          bindtap="setFilter" data-k="{{item.key}}">{{item.label}}</view>
+  </scroll-view>
+
+  <block wx:if="{{files.length}}">
+    <view class="f" wx:for="{{files}}" wx:key="id" bindtap="open" data-id="{{item.id}}">
+      <view class="fi">{{item.kindLabel}}</view>
+      <view class="f-body">
+        <text class="f-name">{{item.name}}</text>
+        <text class="f-meta">
+          {{item.subject}} · {{item.size}}{{item.version > 1 ? ' · v' + item.version : ''}}
+          {{item.links ? ' · 关联 ' + item.links + ' 节课' : ' · 还没关联课堂'}}
+          {{item.isOld ? ' · 历史版本' : ''}}
+        </text>
+      </view>
+    </view>
+  </block>
+
+  <view class="empty" wx:elif="{{!loading}}">
+    <view class="big">▣</view>
+    <p>资料库还是空的。<br>老师发的 PPT、实验报告，从微信会话直接选进来。</p>
+  </view>
+</view>

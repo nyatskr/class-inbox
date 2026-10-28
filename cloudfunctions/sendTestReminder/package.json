@@ -1,0 +1,9 @@
+{
+  "name": "sendTestReminder",
+  "version": "1.0.0",
+  "description": "手动试推一条提醒，验证 Server酱 通道",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

@@ -1,0 +1,32 @@
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24rpx;
+}
+.head .wk { font-size: 30rpx; font-weight: 600; }
+.btn.sm { padding: 12rpx 24rpx; font-size: 24rpx; border-radius: 12rpx; }
+
+.day {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 20rpx 24rpx;
+  margin-bottom: 16rpx;
+}
+.day-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #8a8f98;
+  padding-bottom: 12rpx;
+}
+.day-label .cnt { color: #c2410c; }
+
+.e { display: flex; padding: 14rpx 0; align-items: stretch; }
+.e .bar { width: 6rpx; border-radius: 3rpx; margin-right: 18rpx; }
+.e-body { flex: 1; }
+.e-name { font-size: 28rpx; font-weight: 600; display: block; }
+.e-meta { font-size: 23rpx; color: #8a8f98; margin-top: 4rpx; display: block; }
+
+.none { font-size: 24rpx; color: #c7cbd1; padding: 8rpx 0; }
+.tip { font-size: 22rpx; color: #9ca3af; text-align: center; margin-top: 30rpx; line-height: 1.7; }

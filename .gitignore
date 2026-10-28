@@ -1,0 +1,21 @@
+# 依赖
+node_modules/
+package-lock.json
+
+# 测试产物
+screenshots/
+*.log
+
+# 生成样例表的版式模板：含真实课表信息，绝不提交
+tools/.template.xls
+tools/.template.xlsx
+
+# 小程序构建产物
+miniprogram_npm/
+cloudfunctions/**/node_modules/
+
+# 系统 / 编辑器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

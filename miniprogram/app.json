@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/today/today",
+    "pages/schedule/schedule",
+    "pages/library/library",
+    "pages/history/history",
+    "pages/settings/settings"
+  ],
+  "window": {
+    "navigationBarTitleText": "课堂资料收件箱",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f6f7f9",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#8a8f98",
+    "selectedColor": "#111827",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      { "pagePath": "pages/today/today", "text": "今日" },
+      { "pagePath": "pages/schedule/schedule", "text": "课表" },
+      { "pagePath": "pages/library/library", "text": "资料" },
+      { "pagePath": "pages/history/history", "text": "历史" },
+      { "pagePath": "pages/settings/settings", "text": "我的" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

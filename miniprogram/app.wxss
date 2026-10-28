@@ -1,0 +1,87 @@
+/* app.wxss —— 全局样式
+ * 和网页版保持同一套视觉：浅底、白卡、细边框、圆角 12rpx 系。
+ */
+
+page {
+  background: #f6f7f9;
+  color: #111827;
+  font-size: 28rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+}
+
+.wrap { padding: 24rpx 24rpx 40rpx; }
+
+/* 统计条 */
+.stat {
+  display: flex;
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 24rpx 0;
+  margin-bottom: 24rpx;
+}
+.stat .s { flex: 1; text-align: center; }
+.stat .s b { display: block; font-size: 40rpx; line-height: 1.2; }
+.stat .s span { font-size: 22rpx; color: #8a8f98; }
+
+/* 卡片 */
+.card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 24rpx;
+  margin-bottom: 16rpx;
+}
+.card .top { display: flex; align-items: baseline; justify-content: space-between; }
+.card .name { font-size: 30rpx; font-weight: 600; }
+.card .meta { font-size: 24rpx; color: #8a8f98; margin-top: 8rpx; }
+
+/* 状态 chip */
+.chip {
+  font-size: 22rpx;
+  padding: 4rpx 14rpx;
+  border-radius: 999rpx;
+  border: 1rpx solid #e5e7eb;
+  color: #6b7280;
+}
+.chip.st-pending { background: #fff7ed; border-color: #fed7aa; color: #c2410c; }
+.chip.st-done    { background: #ecfdf5; border-color: #a7f3d0; color: #047857; }
+.chip.st-none    { background: #f3f4f6; border-color: #e5e7eb; color: #6b7280; }
+.chip.st-cancel  { background: #fef2f2; border-color: #fecaca; color: #b91c1c; }
+
+/* 空状态 */
+.empty { text-align: center; padding: 100rpx 40rpx; color: #8a8f98; }
+.empty .big { font-size: 72rpx; opacity: .25; margin-bottom: 20rpx; }
+.empty p { line-height: 1.7; font-size: 26rpx; }
+
+/* 按钮 */
+.btn {
+  display: inline-block;
+  padding: 18rpx 32rpx;
+  border-radius: 16rpx;
+  background: #fff;
+  border: 1rpx solid #e5e7eb;
+  font-size: 26rpx;
+  color: #374151;
+  text-align: center;
+}
+.btn.primary { background: #111827; border-color: #111827; color: #fff; }
+.btn.wide { display: block; width: 100%; box-sizing: border-box; }
+
+/* 区块标题 */
+.sec-title {
+  font-size: 24rpx;
+  color: #8a8f98;
+  margin: 32rpx 8rpx 12rpx;
+  letter-spacing: 1rpx;
+}
+
+/* 提示条 */
+.hint {
+  background: #eef2ff;
+  border: 1rpx solid #dfe5ff;
+  color: #3b5bfd;
+  border-radius: 16rpx;
+  padding: 20rpx 24rpx;
+  font-size: 24rpx;
+  line-height: 1.7;
+  margin-bottom: 24rpx;
+}

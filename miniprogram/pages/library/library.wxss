@@ -1,0 +1,49 @@
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+.bar .total { font-size: 24rpx; color: #8a8f98; }
+.btn.sm { padding: 12rpx 24rpx; font-size: 24rpx; border-radius: 12rpx; }
+
+.kinds { white-space: nowrap; margin-bottom: 20rpx; }
+.k {
+  display: inline-block;
+  font-size: 24rpx;
+  padding: 10rpx 22rpx;
+  margin-right: 12rpx;
+  border-radius: 999rpx;
+  background: #fff;
+  border: 1rpx solid #e5e7eb;
+  color: #4b5563;
+}
+.k.on { background: #111827; border-color: #111827; color: #fff; }
+
+.f {
+  display: flex;
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 22rpx 24rpx;
+  margin-bottom: 14rpx;
+  align-items: center;
+}
+.fi {
+  font-size: 20rpx;
+  color: #6b7280;
+  background: #f3f4f6;
+  border-radius: 8rpx;
+  padding: 8rpx 12rpx;
+  margin-right: 18rpx;
+  max-width: 120rpx;
+}
+.f-body { flex: 1; min-width: 0; }
+.f-name {
+  font-size: 27rpx;
+  font-weight: 600;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.f-meta { font-size: 22rpx; color: #8a8f98; margin-top: 6rpx; display: block; }

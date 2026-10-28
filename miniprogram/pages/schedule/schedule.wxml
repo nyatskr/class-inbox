@@ -1,0 +1,27 @@
+<view class="wrap">
+  <view class="head">
+    <text class="wk">{{weekNo > 0 ? '第 ' + weekNo + ' 周' : '未设学期开始'}}</text>
+    <button class="btn sm" bindtap="importTimetable">导入课表</button>
+  </view>
+
+  <block wx:for="{{days}}" wx:key="wd">
+    <view class="day">
+      <view class="day-label">
+        <text>{{item.label}}</text>
+        <text class="cnt" wx:if="{{item.items.length}}">{{item.items.length}} 节</text>
+      </view>
+      <view class="day-body">
+        <view class="e" wx:for="{{item.items}}" wx:for-item="e" wx:key="id">
+          <view class="bar" style="background:{{e.color}}"></view>
+          <view class="e-body">
+            <text class="e-name">{{e.name}}</text>
+            <text class="e-meta">{{e.sections}} · {{e.weeks}}{{e.location ? ' · ' + e.location : ''}}</text>
+          </view>
+        </view>
+        <view class="none" wx:if="{{!item.items.length}}">没课</view>
+      </view>
+    </view>
+  </block>
+
+  <view class="tip">课表里保留的课都是要追踪的课。不想要的直接删掉，别留着。</view>
+</view>

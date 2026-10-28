@@ -1,0 +1,10 @@
+{
+  "name": "importBackup",
+  "version": "1.0.0",
+  "description": "导入网页版全量备份 ZIP",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3",
+    "adm-zip": "^0.5.16"
+  }
+}

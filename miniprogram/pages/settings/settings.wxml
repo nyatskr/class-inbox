@@ -1,0 +1,50 @@
+<view class="wrap">
+  <view class="stat">
+    <view class="s"><b>{{stats.sessions}}</b><text>课程记录</text></view>
+    <view class="s"><b>{{stats.withText}}</b><text>有转录稿</text></view>
+    <view class="s"><b>{{stats.withPhoto}}</b><text>有板书</text></view>
+    <view class="s"><b>{{stats.files}}</b><text>课程文件</text></view>
+  </view>
+
+  <view class="panel">
+    <view class="item">
+      <view class="lbl">学期开始</view>
+      <picker mode="date" value="{{semesterStart}}" bindchange="onSemester">
+        <view class="val">{{semesterStart || '选择日期'}}</view>
+      </picker>
+    </view>
+    <view class="item">
+      <view class="lbl">每晚检查时间</view>
+      <picker mode="time" value="{{reminderTime}}" bindchange="onReminderTime">
+        <view class="val">{{reminderTime}}</view>
+      </picker>
+    </view>
+    <view class="item">
+      <view class="lbl">
+        晚间提醒
+        <text class="hint-line">过了这个时间，今天还有课没归档就推一次（只查今天）</text>
+      </view>
+      <switch checked="{{notifEnabled}}" bindchange="onNotif" color="#111827" />
+    </view>
+  </view>
+
+  <view class="panel">
+    <view class="item" bindtap="testPush">
+      <view class="lbl">试推一条提醒<text class="hint-line">走云函数 → Server酱 → 微信</text></view>
+      <text class="arrow">›</text>
+    </view>
+    <view class="item" bindtap="importBackup">
+      <view class="lbl">导入网页版备份<text class="hint-line">从微信会话选导出的 ZIP</text></view>
+      <text class="arrow">›</text>
+    </view>
+    <view class="item" bindtap="about">
+      <view class="lbl">关于</view>
+      <text class="arrow">›</text>
+    </view>
+  </view>
+
+  <view class="foot">
+    <text>SendKey 只存在云函数环境变量里，小程序端没有。</text>
+    <text class="ver">课堂资料收件箱 · 小程序骨架 {{version}}</text>
+  </view>
+</view>

@@ -1,0 +1,50 @@
+<view class="wrap">
+  <view class="stat">
+    <view class="s"><b>{{stat.total}}</b><text>今天几节</text></view>
+    <view class="s"><b class="c-done">{{stat.handled}}</b><text>已处理</text></view>
+    <view class="s" wx:if="{{stat.exempt > 0}}"><b class="c-none">{{stat.exempt}}</b><text>免记</text></view>
+    <view class="s"><b class="{{stat.pending ? 'c-pending' : 'c-done'}}">{{stat.pending}}</b><text>待处理</text></view>
+  </view>
+
+  <view class="hint" wx:if="{{histN > 0}}">
+    历史还有 {{histN}} 节没归档。这部分不会进今晚的提醒，想补就去「历史」页。
+  </view>
+
+  <block wx:if="{{list.length}}">
+    <view class="card" wx:for="{{list}}" wx:key="id">
+      <view class="top" bindtap="toggle" data-id="{{item.id}}">
+        <text class="name">{{item.name}}</text>
+        <text class="chip {{item.chipCls}}">{{item.chipLabel}}</text>
+      </view>
+      <view class="meta">{{item.time}}{{item.place ? ' · ' + item.place : ''}}</view>
+
+      <view class="tags" wx:if="{{item.textLen || item.photoN || item.fileN}}">
+        <text class="tag" wx:if="{{item.textLen}}">转录稿 {{item.textLen}} 字</text>
+        <text class="tag" wx:if="{{item.photoN}}">板书 {{item.photoN}} 张</text>
+        <text class="tag" wx:if="{{item.fileN}}">资料 {{item.fileN}} 个</text>
+      </view>
+
+      <view class="detail" wx:if="{{item.expanded}}">
+        <view class="row">
+          <button class="btn sm" bindtap="setStatus" data-id="{{item.id}}" data-status="done">已上传转录稿</button>
+          <button class="btn sm" bindtap="setStatus" data-id="{{item.id}}" data-status="none">无转录稿</button>
+          <button class="btn sm" bindtap="setStatus" data-id="{{item.id}}" data-status="cancelled">课程取消</button>
+        </view>
+        <view class="row">
+          <button class="btn sm" bindtap="addPhotos" data-id="{{item.id}}">＋ 板书照片</button>
+          <button class="btn sm" bindtap="toggleExempt" data-id="{{item.id}}">
+            {{item.exempt ? '已免记 · 点此恢复' : '本次免记'}}
+          </button>
+        </view>
+        <textarea class="ta" placeholder="当堂备注（可选）" bindblur="onNote" data-id="{{item.id}}"></textarea>
+        <view class="note">转录稿正文、从资料库关联 PPT 这些下一步接上；状态和板书先跑通。</view>
+      </view>
+    </view>
+  </block>
+
+  <view class="empty" wx:elif="{{!loading}}">
+    <view class="big">▦</view>
+    <p>今天课表里没有课。</p>
+    <button class="btn" bindtap="goSchedule">去看看课表</button>
+  </view>
+</view>

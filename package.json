@@ -1,0 +1,19 @@
+{
+  "name": "class-inbox",
+  "version": "1.0.0",
+  "private": true,
+  "description": "以课表为索引的课堂资料归档与漏项提醒工具 —— 本地网页原型",
+  "keywords": ["timetable", "note-taking", "indexeddb", "offline-first"],
+  "license": "MIT",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "test": "node tests/run-all.js",
+    "test:library": "node tests/run-all.js 01",
+    "test:edge": "node tests/run-all.js 02",
+    "test:debt": "node tests/run-all.js 03",
+    "test:fixes": "node tests/run-all.js 04"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.1"
+  }
+}
