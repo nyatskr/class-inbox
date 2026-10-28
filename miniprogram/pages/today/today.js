@@ -5,6 +5,7 @@
  */
 
 const db = require('../../services/db');
+const storage = require('../../services/storage');
 const core = require('../../core');
 const app = getApp();
 
@@ -114,12 +115,11 @@ Page({
     const s = await db.get('sessions', id);
     if (!s) return;
 
-    const paths = await require('../../services/storage').chooseImage(9);
+    const paths = await storage.chooseImage(9);
     if (!paths.length) return;
 
     wx.showLoading({ title: '上传中' });
     try {
-      const storage = require('../../services/storage');
       const ids = [];
       for (let i = 0; i < paths.length; i++) {
         ids.push(await storage.uploadFile(paths[i], s.subjectId, `${id}_p${Date.now()}_${i}`, 'jpg'));
